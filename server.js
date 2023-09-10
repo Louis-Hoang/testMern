@@ -25,7 +25,7 @@ const MongoStore = require("connect-mongo");
 const app = express();
 // mongodb://localhost:27017/musicList
 
-const dbUrl = "mongodb://localhost:27017/musicList";
+const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/musicList";;
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
